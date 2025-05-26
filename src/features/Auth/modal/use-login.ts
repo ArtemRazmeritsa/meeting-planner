@@ -1,4 +1,4 @@
-import { login } from '@/shared/api/firebase/auth';
+import { login } from '@/shared/api/auth';
 import { FirebaseError } from 'firebase/app';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
