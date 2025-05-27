@@ -11,7 +11,7 @@ import { Input } from '@/shared/ui/kit/input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import useLogin from '../modal/use-login';
+import useLogin from '../model/use-login';
 import useClearError from './use-clear-error';
 
 const loginSchema = z.object({

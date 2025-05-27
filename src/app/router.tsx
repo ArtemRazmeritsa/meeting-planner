@@ -1,18 +1,39 @@
 import { ROUTES } from '../shared/model/routes';
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import ProtectedRoute from './protected-route';
+import AppHeader from '@/features/AppHeader';
 
 export const router = createBrowserRouter([
   {
     element: <App />,
     children: [
       {
-        path: ROUTES.EVENTS,
-        lazy: () => import('@/features/Events/Events.page'),
+        element: (
+          <>
+            <AppHeader />
+            <ProtectedRoute />
+          </>
+        ),
+        children: [
+          {
+            path: ROUTES.EVENTS,
+            lazy: () => import('@/features/Events/Events.page'),
+          },
+          {
+            path: ROUTES.EVENT,
+            lazy: () => import('@/features/Event/Event.page'),
+          }
+        ],
       },
       {
-        path: ROUTES.EVENT,
-        lazy: () => import('@/features/Event/Event.page'),
+        element: <AppHeader />,
+        children: [
+          {
+            path: ROUTES.HOME,
+            lazy: () => import('@/features/HomePage/Home.page'),
+          },
+        ],
       },
       {
         path: ROUTES.LOGIN,
@@ -23,19 +44,12 @@ export const router = createBrowserRouter([
         lazy: () => import('@/features/Auth/Register.page'),
       },
       {
-        path: ROUTES.HOME,
-        lazy: () => import('@/features/HomePage/Home.page'),
+        path: ROUTES.CREATE_EVENT,
+        lazy: () => import('@/features/CreateEvent/CreateEvent.page'),
       },
       {
         path: ROUTES.PROFILE,
-        lazy: async () => {
-          const module = await import('@/features/Profile/Profile.page');
-          return { Component: module.default };
-        },
-      },
-      {
-        path: ROUTES.CREATE_EVENT,
-        lazy: () => import('@/features/CreateEvent/CreateEvent.page'),
+        lazy: () => import('@/features/Profile/Profile.page'),
       },
     ],
   },

@@ -1,9 +1,19 @@
 import { ROUTES } from '@/shared/model/routes';
 import AuthLayout from './ui/Auth-layout';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import RegisterForm from './ui/Register-form';
+import { useAuth } from '@/shared/hooks/use-auth';
 
 function RegisterPage() {
+  const { user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
+  if (user) {
+    return <Navigate to={ROUTES.HOME} />;
+  }
+
   return (
     <AuthLayout
       title={'Регистрация'}

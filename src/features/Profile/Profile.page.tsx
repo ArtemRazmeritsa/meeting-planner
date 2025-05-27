@@ -1,23 +1,29 @@
 import { useAuth } from '@/shared/hooks/use-auth';
+import { ROUTES } from '@/shared/model/routes';
+import { Navigate } from 'react-router-dom';
 
 const ProfilePage = () => {
-  const { user, loading, logout } = useAuth();
+  const { user, isLoading, logout } = useAuth();
 
-  if (loading) return <p>Загрузка...</p>;
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
+
+  if (!user) {
+    return <Navigate to={ROUTES.LOGIN} />;
+  }
 
   return (
     <div>
-      {user ? (
+      {user && (
         <>
           <p>Пользователь: {user.email}</p>
           <p>UUID: {user.uid}</p>
           <button onClick={logout}>Выйти</button>
         </>
-      ) : (
-        <p>Пользователь не авторизован</p>
       )}
     </div>
   );
 };
 
-export default ProfilePage;
+export const Component = ProfilePage;

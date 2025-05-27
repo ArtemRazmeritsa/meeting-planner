@@ -11,7 +11,7 @@ import { Input } from '@/shared/ui/kit/input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import useRegister from '../modal/use-register';
+import useRegister from '../model/use-register';
 import useClearError from './use-clear-error';
 
 const registerSchema = z
