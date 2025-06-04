@@ -2,10 +2,10 @@ import { ROUTES } from '@/shared/model/routes';
 import AuthLayout from './ui/Auth-layout';
 import { Link, Navigate } from 'react-router-dom';
 import RegisterForm from './ui/Register-form';
-import { useAuth } from '@/shared/hooks/use-auth';
+import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 
 function RegisterPage() {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading } = useAuthStore();
 
   if (isLoading) {
     return <div>Загрузка...</div>;

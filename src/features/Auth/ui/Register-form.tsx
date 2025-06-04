@@ -12,7 +12,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import useRegister from '../model/use-register';
-import useClearError from './use-clear-error';
+import useClearError from '../model/use-clear-error';
 
 const registerSchema = z
   .object({

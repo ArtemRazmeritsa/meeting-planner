@@ -1,16 +1,22 @@
-import { useAuth } from '@/shared/hooks/use-auth';
+import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 import { ROUTES } from '@/shared/model/routes';
 import { Button } from '@/shared/ui/kit/button';
 import { useNavigate } from 'react-router-dom';
 
 export function AppHeader() {
-  const { user, logout } = useAuth();
+  const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
   return (
     <header className="bg-background border-b border-border/40 shadow-sm py-3 px-4 mb-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="text-xl font-semibold">Meeting Planner</div>
+        <Button
+          variant="ghost"
+          className="text-xl font-semibold hover:bg-color/100 hover:cursor-pointer"
+          onClick={() => navigate(ROUTES.HOME)}
+        >
+          Meeting Planner
+        </Button>
 
         <div className="flex items-center gap-4">
           <span className="text-sm text-muted-foreground">
@@ -24,7 +30,7 @@ export function AppHeader() {
             variant="outline"
             size="sm"
             onClick={() => (user ? logout() : navigate(ROUTES.LOGIN))}
-            className="hover:bg-destructive/10"
+            className="hover:bg-muted-foreground/20 hover:cursor-pointer"
           >
             {user ? 'Выйти' : 'Войти'}
           </Button>
