@@ -3,8 +3,6 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
-  User,
 } from 'firebase/auth';
 
 export const register = async (email: string, password: string) => {
@@ -32,12 +30,4 @@ export const logout = async () => {
     console.error('Logout error:', error);
     throw error;
   }
-};
-
-export const subscribeToAuthChanges = (
-  callback: (user: User | null) => void
-) => {
-  return onAuthStateChanged(auth, (user) => {
-    callback(user);
-  });
 };

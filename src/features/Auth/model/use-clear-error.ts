@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { FieldValues, UseFormReturn } from "react-hook-form";
+import { useEffect } from 'react';
+import { FieldValues, UseFormReturn } from 'react-hook-form';
 
 function useClearError<T extends FieldValues>(
-    form: UseFormReturn<T>,
-    error: string | null,
-    clearError: () => void
+  form: UseFormReturn<T>,
+  error: string | null,
+  clearError: () => void
 ) {
-   useEffect(() => {
+  useEffect(() => {
     if (!error) return;
 
     const subscription = form.watch(() => {
@@ -17,5 +17,4 @@ function useClearError<T extends FieldValues>(
   }, [form, error, clearError]);
 }
 
-
-export default useClearError
+export default useClearError;

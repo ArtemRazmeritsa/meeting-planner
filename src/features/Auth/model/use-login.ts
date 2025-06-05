@@ -1,19 +1,17 @@
-import { login } from '@/shared/api/firebase/auth';
+import { login } from '@/shared/api/auth';
 import { FirebaseError } from 'firebase/app';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function useLogin() {
-  const [isPending, setisPending] = useState(false);
+  const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   const handleLogin = async (email: string, password: string) => {
-    setisPending(true);
+    setIsPending(true);
     setError(null);
+
     try {
       await login(email, password);
-      navigate('/');
     } catch (e) {
       if (e instanceof FirebaseError) {
         if (
@@ -30,7 +28,7 @@ function useLogin() {
         setError('Неизвестная ошибка');
       }
     } finally {
-      setisPending(false);
+      setIsPending(false);
     }
   };
 

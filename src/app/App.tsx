@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className="min-h-screen flex flex-col">
       <AppHeader />
       <Outlet />
     </div>

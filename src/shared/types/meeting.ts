@@ -4,7 +4,6 @@ export interface Meeting {
   createdBy?: string;
   availableDates?: Date[];
   accessLink?: string;
-  allowAnonymousVotes?: boolean;
   participants?: string[];
   createdAt?: Date;
 }

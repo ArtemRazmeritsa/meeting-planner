@@ -1,9 +1,26 @@
 import { ROUTES } from '@/shared/model/routes';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import AuthLayout from './ui/Auth-layout';
 import LoginForm from './ui/Login-form';
+import { useEffect } from 'react';
+import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 
 function LoginPage() {
+  const { user, isLoading } = useAuthStore();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || ROUTES.HOME;
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
+
+  if (isLoading) {
+    return null;
+  }
+
   return (
     <AuthLayout
       title={'Вход'}
