@@ -8,6 +8,15 @@ import {
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { login, logout, register } from './auth';
 
+const mockResult: UserCredential = {
+  user: {
+    uid: '123',
+    email: 'test@test.com',
+  } as unknown as User,
+  providerId: 'password',
+  operationType: 'signIn',
+};
+
 vi.mock('firebase/auth', () => ({
   createUserWithEmailAndPassword: vi.fn(),
   getAuth: vi.fn(() => ({})),
@@ -22,12 +31,6 @@ describe('register', () => {
   });
 
   it('вызывает createUserWithEmailAndPassword с правильными аргументами', async () => {
-    const mockResult: UserCredential = {
-      user: {} as User,
-      providerId: 'password',
-      operationType: 'signIn',
-    };
-
     mockCreateUser.mockResolvedValue(mockResult);
     const email = 'test@test.com';
     const password = '123456';
@@ -57,12 +60,6 @@ describe('login', () => {
   });
 
   it('вызывает signInWithEmailAndPassword с правильными аргументами', async () => {
-    const mockResult: UserCredential = {
-      user: {} as User,
-      providerId: 'password',
-      operationType: 'signIn',
-    };
-
     mockLoginUser.mockResolvedValue(mockResult);
     const email = 'test@test.com';
     const password = '123456';

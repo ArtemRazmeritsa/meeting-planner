@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAuthStore } from './use-auth-store';
+import { useAuthStore } from '../../shared/global-stores/auth/use-auth-store';
 
 function AuthInit() {
   const subscribeToAuth = useAuthStore((state) => state.subscribeToAuth);
