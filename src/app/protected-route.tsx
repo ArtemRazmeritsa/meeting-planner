@@ -7,12 +7,12 @@ function ProtectedRoute() {
   const location = useLocation();
 
   if (isLoading) {
-  return null;
-}
+    return null;
+  }
 
   if (!user) {
     return (
-      <Navigate to={ROUTES.LOGIN} state={{ from: location }} replace />
+      <Navigate to={ROUTES.LOGIN} state={{ from: location.pathname }} replace />
     );
   }
 

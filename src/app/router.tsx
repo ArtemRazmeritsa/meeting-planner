@@ -22,6 +22,10 @@ export const router = createBrowserRouter([
             path: ROUTES.EVENT,
             lazy: () => import('@/features/Event/Event.page'),
           },
+          {
+            path: ROUTES.CREATE_EVENT,
+            lazy: () => import('@/features/CreateEvent/CreateEvent.page'),
+          },
         ],
       },
       {
@@ -31,10 +35,6 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.REGISTER,
         lazy: () => import('@/features/Auth/Register.page'),
-      },
-      {
-        path: ROUTES.CREATE_EVENT,
-        lazy: () => import('@/features/CreateEvent/CreateEvent.page'),
       },
       {
         path: ROUTES.PROFILE,

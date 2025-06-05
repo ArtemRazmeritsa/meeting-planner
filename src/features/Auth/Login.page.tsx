@@ -9,7 +9,7 @@ function LoginPage() {
   const { user, isLoading } = useAuthStore();
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || ROUTES.HOME;
+  const from = location.state?.from || ROUTES.HOME;
 
   useEffect(() => {
     if (user) {

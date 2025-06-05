@@ -12,7 +12,7 @@ export function AppHeader() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Button
           variant="ghost"
-          className="text-xl font-semibold hover:bg-color/100 hover:cursor-pointer"
+          className="text-xl font-semibold hover:bg-color/100"
           onClick={() => navigate(ROUTES.HOME)}
         >
           Meeting Planner
@@ -30,7 +30,6 @@ export function AppHeader() {
             variant="outline"
             size="sm"
             onClick={() => (user ? logout() : navigate(ROUTES.LOGIN))}
-            className="hover:bg-muted-foreground/20 hover:cursor-pointer"
           >
             {user ? 'Выйти' : 'Войти'}
           </Button>

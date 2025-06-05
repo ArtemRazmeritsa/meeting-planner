@@ -2,7 +2,7 @@ import { auth } from '@/shared/firebase';
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut
+  signOut,
 } from 'firebase/auth';
 
 export const register = async (email: string, password: string) => {
@@ -31,4 +31,3 @@ export const logout = async () => {
     throw error;
   }
 };
-
