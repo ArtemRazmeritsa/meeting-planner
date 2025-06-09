@@ -1,19 +1,18 @@
-import { auth } from '@/shared/firebase';
+import { register } from '@/shared/api/auth';
 import { FirebaseError } from 'firebase/app';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function useRegister() {
-  const [isPending, setisPending] = useState(false);
+  const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleRegister = async (email: string, password: string) => {
     setError(null);
-    setisPending(true);
+    setIsPending(true);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await register(email, password);
       navigate('/');
     } catch (e) {
       if (e instanceof FirebaseError) {
@@ -30,7 +29,7 @@ function useRegister() {
         }
       }
     } finally {
-      setisPending(false);
+      setIsPending(false);
     }
   };
 
