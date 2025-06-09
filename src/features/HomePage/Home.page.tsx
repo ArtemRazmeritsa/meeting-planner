@@ -13,7 +13,7 @@ function HomePage() {
       <Button
         variant="outline"
         size="lg"
-        className="text-xl"
+        className="text-xl bg-popover"
         onClick={() =>
           user
             ? navigate(ROUTES.CREATE_EVENT)
