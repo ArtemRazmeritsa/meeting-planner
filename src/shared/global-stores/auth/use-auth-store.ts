@@ -1,6 +1,7 @@
-import { onAuthStateChanged, signOut, User } from 'firebase/auth';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { create } from 'zustand';
 import { auth } from '../../firebase';
+import { logout } from '@/shared/api/auth';
 
 export interface AuthContextType {
   user: User | null;
@@ -13,7 +14,7 @@ export const useAuthStore = create<AuthContextType>((set) => ({
   user: null,
   isLoading: true,
   logout: async () => {
-    await signOut(auth);
+    await logout();
     set({ user: null });
   },
   subscribeToAuth: () => {
