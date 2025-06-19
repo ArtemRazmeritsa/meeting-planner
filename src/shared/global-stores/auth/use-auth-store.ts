@@ -3,14 +3,14 @@ import { create } from 'zustand';
 import { auth } from '../../firebase';
 import { logout } from '@/shared/api/auth';
 
-export interface AuthContextType {
+export interface AuthStoreType {
   user: User | null;
   isLoading: boolean;
   logout: () => Promise<void>;
   subscribeToAuth: () => () => void;
 }
 
-export const useAuthStore = create<AuthContextType>((set) => ({
+export const useAuthStore = create<AuthStoreType>((set) => ({
   user: null,
   isLoading: true,
   logout: async () => {
