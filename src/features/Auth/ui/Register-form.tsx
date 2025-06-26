@@ -36,6 +36,7 @@ const registerSchema = z
 function RegisterForm() {
   const form = useForm({
     resolver: zodResolver(registerSchema),
+    mode: 'onChange',
   });
 
   const { handleRegister, isPending, error, clearError } = useRegister();

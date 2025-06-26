@@ -30,15 +30,16 @@ const loginSchema = z.object({
 function LoginForm() {
   const form = useForm({
     resolver: zodResolver(loginSchema),
+    mode: 'onChange',
   });
 
   const { handleLogin, isPending, error, clearError } = useLogin();
 
+  useClearError(form, error, clearError);
+
   const onSubmit = form.handleSubmit((data) => {
     handleLogin(data.email, data.password);
   });
-
-  useClearError(form, error, clearError);
 
   return (
     <Form {...form}>
