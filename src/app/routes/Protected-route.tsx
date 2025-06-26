@@ -1,5 +1,5 @@
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 function ProtectedRoute() {

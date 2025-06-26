@@ -1,4 +1,4 @@
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 import AuthLayout from './ui/Auth-layout';
 import { Link, Navigate } from 'react-router-dom';
 import RegisterForm from './ui/Register-form';

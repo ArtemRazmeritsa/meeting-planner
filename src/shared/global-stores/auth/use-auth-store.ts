@@ -18,8 +18,8 @@ export const useAuthStore = create<AuthStoreType>((set) => ({
     set({ user: null });
   },
   subscribeToAuth: () => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      set({ user: firebaseUser, isLoading: false });
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      set({ user: user, isLoading: false });
     });
     return unsubscribe;
   },

@@ -1,5 +1,5 @@
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 import { Button } from '@/shared/ui/kit/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,18 +9,17 @@ function HomePage() {
 
   return (
     <div className="flex flex-col items-center py-20 gap-10">
-      <h1 className="text-4xl">Do you want to create a meeting?</h1>
       <Button
-        variant="outline"
+        variant="default"
         size="lg"
-        className="text-xl bg-popover"
+        className="text-2xl inset-shadow-sm inset-shadow-secondary hover:bg-accent"
         onClick={() =>
           user
             ? navigate(ROUTES.CREATE_EVENT)
             : navigate(ROUTES.LOGIN, { state: { from: ROUTES.CREATE_EVENT } })
         }
       >
-        Create
+        Let's create meeting!
       </Button>
     </div>
   );

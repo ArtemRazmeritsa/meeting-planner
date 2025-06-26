@@ -1,5 +1,5 @@
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 import { Button } from '@/shared/ui/kit/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,11 +8,11 @@ export function AppHeader() {
   const navigate = useNavigate();
 
   return (
-    <header className="bg-secondary border-b border-border/40 shadow-sm py-3 px-4 mb-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <header className="bg-secondary shadow-sm shadow-secondary py-4 px-4 mb-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Button
           variant="ghost"
-          className="text-xl font-semibold hover:bg-color/100"
+          className="text-xl text-primary-foreground/80 font-semibold "
           onClick={() => navigate(ROUTES.HOME)}
         >
           Meeting Planner
@@ -27,7 +27,8 @@ export function AppHeader() {
             )}
           </span>
           <Button
-            variant="outline"
+            variant="default"
+            className="text-primary-foreground/80 shadow-secondary-foreground/80 hover:bg-accent-foreground"
             size="sm"
             onClick={() => (user ? logout() : navigate(ROUTES.LOGIN))}
           >

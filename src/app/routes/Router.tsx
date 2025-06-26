@@ -1,4 +1,4 @@
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import ProtectedRoute from './Protected-route';
