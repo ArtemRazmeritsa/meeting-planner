@@ -1,9 +1,9 @@
-import { useAuth } from '@/shared/hooks/use-auth';
-import { ROUTES } from '@/shared/model/routes';
+import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
+import { ROUTES } from '@/shared/config/routes';
 import { Navigate } from 'react-router-dom';
 
 const ProfilePage = () => {
-  const { user, isLoading, logout } = useAuth();
+  const { user, isLoading, logout } = useAuthStore();
 
   if (isLoading) {
     return <div>Загрузка...</div>;

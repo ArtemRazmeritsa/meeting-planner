@@ -3,7 +3,7 @@ import ProtectedRoute from './Protected-route';
 import { User } from 'firebase/auth';
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 import { render, screen } from '@testing-library/react';
-import { ROUTES } from '@/shared/model/routes';
+import { ROUTES } from '@/shared/config/routes';
 
 const mockUser = {
   uid: '123',
