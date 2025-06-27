@@ -8,11 +8,7 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        element: (
-          <>
-            <ProtectedRoute />
-          </>
-        ),
+        element: <ProtectedRoute />,
         children: [
           {
             path: ROUTES.EVENTS,
