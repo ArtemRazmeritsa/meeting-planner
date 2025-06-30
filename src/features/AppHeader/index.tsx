@@ -34,7 +34,7 @@ export function AppHeader() {
           <Switch onClick={toggleTheme}></Switch>
           <Button
             variant="default"
-            className="text-primary-foreground/80 shadow-secondary-foreground/80 hover:bg-accent-foreground"
+            className="text-primary-foreground/80 shadow-secondary-foreground/80 hover:bg-accent"
             size="sm"
             onClick={() => (user ? logout() : navigate(ROUTES.LOGIN))}
           >
