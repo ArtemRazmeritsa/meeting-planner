@@ -1,8 +1,8 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/shared/firebase';
-import { Vote } from '@/shared/types/vote';
+import { IVote } from '@/shared/types/vote';
 
-export const submitVote = async (vote: Omit<Vote, 'votedAt'>) => {
+export const submitVote = async (vote: Omit<IVote, 'votedAt'>) => {
   try {
     return await addDoc(collection(db, 'votes'), {
       ...vote,

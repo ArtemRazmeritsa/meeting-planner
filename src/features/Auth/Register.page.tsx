@@ -1,7 +1,7 @@
 import { ROUTES } from '@/shared/config/routes';
-import AuthLayout from './ui/Auth-layout';
+import AuthLayout from './ui/AuthLayout';
 import { Link, Navigate } from 'react-router-dom';
-import RegisterForm from './ui/Register-form';
+import RegisterForm from './ui/RegisterForm';
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 
 function RegisterPage() {
@@ -22,7 +22,7 @@ function RegisterPage() {
       footerText={
         <>
           Уже есть аккаунт?
-          <Link className="underline text-primary" to={ROUTES.LOGIN}>
+          <Link className='underline text-primary' to={ROUTES.LOGIN}>
             Войти
           </Link>
         </>

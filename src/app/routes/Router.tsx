@@ -1,7 +1,7 @@
 import { ROUTES } from '@/shared/config/routes';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import ProtectedRoute from './Protected-route';
+import ProtectedRoute from './ProtectedRoute';
 
 export const router = createBrowserRouter([
   {
@@ -9,19 +9,32 @@ export const router = createBrowserRouter([
     children: [
       {
         element: <ProtectedRoute />,
-        children: [
-          {
-            path: ROUTES.EVENTS,
-            lazy: () => import('@/features/Events/Events.page'),
-          },
-          {
-            path: ROUTES.EVENT,
-            lazy: () => import('@/features/Event/Event.page'),
-          },
-          {
-            path: ROUTES.CREATE_EVENT,
-            lazy: () => import('@/features/CreateEvent/CreateEvent.page'),
-          },
+        children: [ {
+          path: ROUTES.MEETINGS,
+          lazy: () => import('@/features/Meetings/Meetings.page'),
+        },
+        {
+          path: ROUTES.MEETING,
+          lazy: () => import('@/features/Meeting/Meeting.page'),
+        },
+        {
+          path: ROUTES.CREATE_MEETING,
+          lazy: () => import('@/features/CreateMeeting/CreateMeeting.page'),
+          children: [
+            {
+              path: 'title',
+              lazy: () => import('@/features/CreateMeeting/ui/steps/TitleStep'),
+            },
+            {
+              path: 'dates',
+              lazy: () => import('@/features/CreateMeeting/ui/steps/DatesStep'),
+            },
+            {
+              path: 'final',
+              lazy: () => import('@/features/CreateMeeting/ui/steps/FinalStep'),
+            },]
+          
+          }
         ],
       },
       {

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import ProtectedRoute from './Protected-route';
+import ProtectedRoute from './ProtectedRoute';
 import { User } from 'firebase/auth';
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 import { render, screen } from '@testing-library/react';

@@ -8,10 +8,10 @@ function useToggleTheme() {
   }, []);
 
   const toggleTheme = () => {
-    const dark = document.body.classList.toggle('dark')
-    localStorage.setItem('theme', dark ? 'dark' : 'default')
-  }
+    const dark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', dark ? 'dark' : 'default');
+  };
 
-  return {toggleTheme}
+  return { toggleTheme };
 }
 export default useToggleTheme;

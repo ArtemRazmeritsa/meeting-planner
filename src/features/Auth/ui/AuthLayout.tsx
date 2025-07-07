@@ -19,15 +19,15 @@ function AuthLayout({
   footerText: React.ReactNode;
 }) {
   return (
-    <main className="grow flex flex-col pt-[200px] items-center">
-      <Card className="w-full max-w-[600px]">
+    <main className='grow flex flex-col pt-[200px] items-center'>
+      <Card className='w-full max-w-[600px]'>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent>{form}</CardContent>
-        <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-forground">{footerText}</p>
+        <CardFooter className='flex justify-center'>
+          <p className='text-sm text-muted-forground'>{footerText}</p>
         </CardFooter>
       </Card>
     </main>

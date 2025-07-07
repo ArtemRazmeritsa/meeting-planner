@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthInit />
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );

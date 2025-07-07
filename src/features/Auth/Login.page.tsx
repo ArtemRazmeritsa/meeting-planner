@@ -1,7 +1,7 @@
 import { ROUTES } from '@/shared/config/routes';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import AuthLayout from './ui/Auth-layout';
-import LoginForm from './ui/Login-form';
+import AuthLayout from './ui/AuthLayout';
+import LoginForm from './ui/LoginForm';
 import { useEffect } from 'react';
 import { useAuthStore } from '@/shared/global-stores/auth/use-auth-store';
 
@@ -29,7 +29,7 @@ function LoginPage() {
       footerText={
         <>
           Нет аккаунта?
-          <Link className="underline text-primary" to={ROUTES.REGISTER}>
+          <Link className='underline text-primary' to={ROUTES.REGISTER}>
             Зарегистрироваться
           </Link>
         </>

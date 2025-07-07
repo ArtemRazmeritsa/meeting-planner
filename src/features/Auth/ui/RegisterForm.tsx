@@ -49,15 +49,15 @@ function RegisterForm() {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-4" onSubmit={onSubmit}>
+      <form className='flex flex-col gap-4' onSubmit={onSubmit}>
         <FormField
           control={form.control}
-          name="email"
+          name='email'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Введите email" {...field} />
+                <Input placeholder='Введите email' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -65,13 +65,13 @@ function RegisterForm() {
         />
         <FormField
           control={form.control}
-          name="password"
+          name='password'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Пароль</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Введите пароль"
+                  placeholder='Введите пароль'
                   type={'password'}
                   {...field}
                 />
@@ -82,7 +82,7 @@ function RegisterForm() {
         />
         <FormField
           control={form.control}
-          name="confirmPassword"
+          name='confirmPassword'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Подтвердите пароль</FormLabel>
@@ -93,8 +93,8 @@ function RegisterForm() {
             </FormItem>
           )}
         />
-        {error && <p className="text-destructive text-sm">{error}</p>}
-        <Button disabled={isPending} type="submit">
+        {error && <p className='text-destructive text-sm'>{error}</p>}
+        <Button disabled={isPending} type='submit'>
           Войти
         </Button>
       </form>
