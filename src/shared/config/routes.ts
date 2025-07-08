@@ -4,15 +4,15 @@ export const ROUTES = {
   HOME: '/',
   LOGIN: '/login',
   REGISTER: '/register',
-  EVENTS: '/events',
-  EVENT: '/events/:eventsId',
+  MEETINGS: '/meetings',
+  MEETING: '/meetings/:meetingId',
   PROFILE: '/profile',
-  CREATE_EVENT: '/create-event',
+  CREATE_MEETING: '/create-meeting',
 } as const;
 
 export type PathParams = {
-  [ROUTES.EVENT]: {
-    eventsId: string;
+  [ROUTES.MEETING]: {
+    meetingId: string;
   };
 };
 

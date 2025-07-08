@@ -1,9 +1,7 @@
-export interface Meeting {
-  id: string;
+export interface IMeeting {
   title: string;
-  createdBy?: string;
-  availableDates?: Date[];
-  accessLink?: string;
-  participants?: string[];
-  createdAt?: Date;
+  dates: Date[];
+  link: string;
+  ownerId?: string;
+  createdAt?: string;
 }

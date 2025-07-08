@@ -39,7 +39,7 @@ describe('register', () => {
     expect(mockCreateUser).toHaveBeenCalledWith(
       expect.anything(),
       email,
-      password
+      password,
     );
     expect(result).toBe(mockResult);
   });
@@ -48,7 +48,7 @@ describe('register', () => {
     const errorMessage = 'Ошибка регистрации';
     mockCreateUser.mockRejectedValue(new Error(errorMessage));
     await expect(register('test@test.com', '123456')).rejects.toThrow(
-      errorMessage
+      errorMessage,
     );
   });
 });
@@ -68,7 +68,7 @@ describe('login', () => {
     expect(mockLoginUser).toHaveBeenCalledWith(
       expect.anything(),
       email,
-      password
+      password,
     );
     expect(result).toBe(mockResult);
   });
@@ -77,7 +77,7 @@ describe('login', () => {
     const errorMessage = 'Ошибка входа';
     mockLoginUser.mockRejectedValue(new Error(errorMessage));
     await expect(login('test@test.com', '123456')).rejects.toThrow(
-      errorMessage
+      errorMessage,
     );
   });
 });

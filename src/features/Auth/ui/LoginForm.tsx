@@ -43,15 +43,15 @@ function LoginForm() {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-4" onSubmit={onSubmit}>
+      <form className='flex flex-col gap-4' onSubmit={onSubmit}>
         <FormField
           control={form.control}
-          name="email"
+          name='email'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Введите email" {...field} />
+                <Input placeholder='Введите email' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -59,13 +59,13 @@ function LoginForm() {
         />
         <FormField
           control={form.control}
-          name="password"
+          name='password'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Введите пароль"
+                  placeholder='Введите пароль'
                   type={'password'}
                   {...field}
                 />
@@ -74,8 +74,8 @@ function LoginForm() {
             </FormItem>
           )}
         />
-        {error && <p className="text-destructive text-sm">{error}</p>}
-        <Button disabled={isPending} type="submit">
+        {error && <p className='text-destructive text-sm'>{error}</p>}
+        <Button disabled={isPending} type='submit'>
           Войти
         </Button>
       </form>

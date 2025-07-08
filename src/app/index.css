@@ -45,26 +45,29 @@
   --radius: 0.625rem;
   /* цвет основного фона */
   --background: oklch(1 0 0);
-  /* цвет основного текста */
+  /* цвет акцентного фона */
   --foreground: oklch(0 0 0);
+  /* основной цвет */
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+  /* второй цвет */
+  --secondary: oklch(1 0 0);
+  --secondary-foreground: oklch(0 0 0);
+  /* акцентный цвет */
+  --accent: oklch(0.6 0 0);
+  --accent-foreground: oklch(0 0 0/50%);
+  /* цвет при ховере (светло-серый) */
+  --muted: oklch(0.45 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+
+  /* цвет границы */
+  --border: oklch(0 0 0);
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  /* фон для хедера */
-  --secondary: oklch(0.4955 0 2);
-  /* текст для хедера */
-  --secondary-foreground: oklch(0 0 0);
-  --muted: oklch(0.5064 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  /* цвет при ховере на кнопки */
-  --accent: oklch(0 0 0/60%);
-  --accent-foreground: oklch(0 0 0/50%);
   --destructive: oklch(0.577 0.245 27.325);
-  /* цвет границы */
-  --border: oklch( 0 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -84,18 +87,20 @@
 
 .dark {
   --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(1 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  /* основной цвет */
+  --primary: oklch(1 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
+  /* цвет при ховере */
+  --muted: oklch(1 0 0/70%);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.7 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);

@@ -5,7 +5,6 @@ import {
   signOut,
 } from 'firebase/auth';
 
-
 export const register = async (email: string, password: string) => {
   try {
     return await createUserWithEmailAndPassword(auth, email, password);
@@ -32,6 +31,3 @@ export const logout = async () => {
     throw e;
   }
 };
-
-
-

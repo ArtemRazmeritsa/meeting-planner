@@ -1,4 +1,4 @@
-export interface Vote {
+export interface IVote {
   meetingId: string;
   userId?: string;
   anonymousId?: string;

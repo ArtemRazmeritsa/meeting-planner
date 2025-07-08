@@ -4,7 +4,7 @@ import { FieldValues, UseFormReturn } from 'react-hook-form';
 function useClearError<T extends FieldValues>(
   form: UseFormReturn<T>,
   error: string | null,
-  clearError: () => void
+  clearError: () => void,
 ) {
   useEffect(() => {
     if (!error) return;
