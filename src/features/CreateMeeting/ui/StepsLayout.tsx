@@ -9,7 +9,7 @@ function StepsLayout({
 }) {
   return (
     <main className='flex flex-col pt-[40px] sm:pt-[80px] items-center w-full'>
-      <Card className='w-[80%] md:w-[60%] p-6'>
+      <Card className='w-[80%] md:w-[60%] lg:w-[40%] p-6'>
         <CardHeader className='flex justify-center whitespace-nowrap'>
           <CardTitle className='text-xl'>{title}</CardTitle>
         </CardHeader>
